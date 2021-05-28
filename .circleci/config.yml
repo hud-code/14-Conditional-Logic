@@ -13,8 +13,9 @@ jobs:
       - checkout
       - when:
           condition:
+            and:
             # Add condition to execute this step when the github branch is equal to 'main'
-            - equal: [ main, << pipeline.git.branch >> ]
+              - equal: [ main, << pipeline.git.branch >> ]
           steps:
             - run: echo "I am on main"
 
