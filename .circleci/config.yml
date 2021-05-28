@@ -32,8 +32,8 @@ workflows:
       - my-job
 
   conditional-workflow:
-    when:
-      and:
-        # Add condition to execute this workflow when condition-workflow is equal to true
+    when: << pipeline.parameters.condition-workflow >>
+      # and:
+      #   # Add condition to execute this workflow when condition-workflow is equal to true
     jobs:
       - conditional-job
